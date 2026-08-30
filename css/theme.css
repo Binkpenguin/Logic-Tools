@@ -1,0 +1,175 @@
+/* ============================================================
+   theme.css — all look-and-feel lives in CSS custom properties.
+   Swap a preset by setting <html data-theme="…">, or override
+   any single variable at runtime (Customization panel writes
+   them onto :root inline). Add your own preset by copying a
+   block and giving it a new [data-theme] name.
+   ============================================================ */
+
+:root {
+  /* geometry — the Customization panel scales these */
+  --row-h: 74px;
+  --header-w: 232px;
+  --ruler-h: 34px;
+  --strip-w: 108px;
+  --radius: 3px;
+  --font-ui: "Helvetica Neue", Inter, "Segoe UI", system-ui, sans-serif;
+  --font-num: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --fs: 11px;
+}
+
+/* ---------- PTX Dark : the default, Pro-Tools-flavored ---------- */
+[data-theme="ptx-dark"] {
+  --bg-app:      #16181a;
+  --bg-chrome:   #1e2124;
+  --bg-chrome-2: #26292d;
+  --bg-panel:    #1a1d20;
+  --bg-lane:     #121416;
+  --bg-lane-alt: #15181a;
+  --bg-sunken:   #0d0f10;
+  --line:        #000000;
+  --line-soft:   #303438;
+  --edge-hi:     #3a3f44;
+
+  --text:        #cfd4d8;
+  --text-dim:    #8b9298;
+  --text-faint:  #5d6469;
+
+  --accent:      #40c8a0;   /* PT teal-green */
+  --accent-2:    #2f9e7e;
+  --rec:         #e0453a;
+  --solo:        #f0c419;
+  --mute:        #4a90d9;
+  --arm:         #cf3d34;
+  --sel:         #f5d76e;
+
+  --wave:        #6fd8b6;
+  --wave-bg:     #1f3b34;
+  --region-brd:  #000;
+
+  --meter-lo:    #35c46f;
+  --meter-mid:   #d7cb3a;
+  --meter-hi:    #e04a3a;
+
+  --shadow: 0 6px 22px rgba(0,0,0,.55);
+}
+
+/* ---------- Slate Light : quieter, Logic-ish silver ---------- */
+[data-theme="slate-light"] {
+  --bg-app:      #cdd1d5;
+  --bg-chrome:   #dfe3e7;
+  --bg-chrome-2: #eef1f4;
+  --bg-panel:    #d7dbdf;
+  --bg-lane:     #f2f4f6;
+  --bg-lane-alt: #e9ecef;
+  --bg-sunken:   #bfc4c9;
+  --line:        #9aa1a8;
+  --line-soft:   #b6bcc2;
+  --edge-hi:     #ffffff;
+
+  --text:        #23282c;
+  --text-dim:    #5a6167;
+  --text-faint:  #868d94;
+
+  --accent:      #1f7a63;
+  --accent-2:    #14614e;
+  --rec:         #c8342a;
+  --solo:        #c99b0d;
+  --mute:        #2e6fb0;
+  --arm:         #c8342a;
+  --sel:         #a8791a;
+
+  --wave:        #2b8a70;
+  --wave-bg:     #cfe4dc;
+  --region-brd:  #7d858c;
+
+  --meter-lo:    #2a9d54;
+  --meter-mid:   #c1b52c;
+  --meter-hi:    #cc4032;
+
+  --shadow: 0 6px 22px rgba(0,0,0,.22);
+}
+
+/* ---------- Console Blue : vintage large-format desk ---------- */
+[data-theme="console-blue"] {
+  --bg-app:      #0f1620;
+  --bg-chrome:   #16202c;
+  --bg-chrome-2: #1d2937;
+  --bg-panel:    #131c26;
+  --bg-lane:     #0c131b;
+  --bg-lane-alt: #0f1720;
+  --bg-sunken:   #080d12;
+  --line:        #000;
+  --line-soft:   #2a3948;
+  --edge-hi:     #38495c;
+
+  --text:        #cddae6;
+  --text-dim:    #7f93a6;
+  --text-faint:  #55677a;
+
+  --accent:      #4aa8ff;
+  --accent-2:    #2f7fc9;
+  --rec:         #ff4d4d;
+  --solo:        #ffcf3f;
+  --mute:        #6fa8ff;
+  --arm:         #ff4d4d;
+  --sel:         #ffd980;
+
+  --wave:        #7fc4ff;
+  --wave-bg:     #17324a;
+  --region-brd:  #000;
+
+  --meter-lo:    #37c9d8;
+  --meter-mid:   #ffcf3f;
+  --meter-hi:    #ff5544;
+
+  --shadow: 0 6px 22px rgba(0,0,0,.6);
+}
+
+/* ---------- Tape Amber : warm, low-contrast night mode ---------- */
+[data-theme="tape-amber"] {
+  --bg-app:      #17140f;
+  --bg-chrome:   #201c15;
+  --bg-chrome-2: #2a251c;
+  --bg-panel:    #1b1811;
+  --bg-lane:     #13110c;
+  --bg-lane-alt: #171410;
+  --bg-sunken:   #0c0a07;
+  --line:        #000;
+  --line-soft:   #3a3327;
+  --edge-hi:     #463d2d;
+
+  --text:        #ddd0b8;
+  --text-dim:    #9d9179;
+  --text-faint:  #6c6353;
+
+  --accent:      #e8a13c;
+  --accent-2:    #b87a22;
+  --rec:         #d9432f;
+  --solo:        #e8c33c;
+  --mute:        #7fa0c8;
+  --arm:         #d9432f;
+  --sel:         #f0d089;
+
+  --wave:        #f0b45c;
+  --wave-bg:     #3b2c15;
+  --region-brd:  #000;
+
+  --meter-lo:    #b7c23a;
+  --meter-mid:   #e8c33c;
+  --meter-hi:    #d9432f;
+
+  --shadow: 0 6px 22px rgba(0,0,0,.6);
+}
+
+/* track color swatches, referenced by index into TRACK_COLORS in js */
+:root {
+  --tc-0: #4a90d9;
+  --tc-1: #40c8a0;
+  --tc-2: #d9a441;
+  --tc-3: #d95f5f;
+  --tc-4: #9b6fd9;
+  --tc-5: #4fbcd9;
+  --tc-6: #7fbf4f;
+  --tc-7: #d97fb8;
+}
