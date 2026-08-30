@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+*.proteus
+*.wav
+!docs/**/*.wav
+.vscode/
+.idea/
