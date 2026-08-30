@@ -1,0 +1,41 @@
+/* pianoroll.css — MIDI editor drawer */
+
+#editor-drawer {
+  flex: 0 0 300px; display: flex; flex-direction: column;
+  border-top: 1px solid var(--line); background: var(--bg-panel);
+  transition: flex-basis .16s ease;
+}
+#editor-drawer.collapsed { flex-basis: 24px; }
+#editor-drawer.collapsed #pr-body,
+#editor-drawer.collapsed #pr-velocity { display: none; }
+#editor-drawer.collapsed #pr-close { transform: rotate(180deg); }
+
+#drawer-head {
+  display: flex; align-items: center; gap: 10px; padding: 3px 8px;
+  height: 24px; flex: 0 0 24px;
+  background: linear-gradient(var(--bg-chrome-2), var(--bg-chrome));
+  border-bottom: 1px solid var(--line);
+}
+.drawer-title { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim); }
+.drawer-sub { font-size: 10px; color: var(--accent); font-family: var(--font-num); }
+label.inline { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--text-dim); }
+label.inline select { width: 64px; }
+label.inline input[type=range] { width: 90px; }
+
+#pr-body { flex: 1 1 auto; display: flex; min-height: 0; }
+#pr-keys { flex: 0 0 56px; width: 56px; height: 100%; background: var(--bg-chrome); }
+#pr-grid-wrap { flex: 1 1 auto; position: relative; min-width: 0; overflow: hidden; background: var(--bg-lane); }
+#pr-grid { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; }
+#pr-playhead {
+  position: absolute; top: 0; bottom: 0; width: 1px; background: var(--accent);
+  pointer-events: none; box-shadow: 0 0 4px var(--accent);
+}
+
+#pr-velocity {
+  flex: 0 0 60px; height: 60px; border-top: 1px solid var(--line);
+  background: var(--bg-lane-alt); position: relative;
+}
+#pr-vel-canvas {
+  position: absolute; top: 0; bottom: 0; left: 56px; right: 0;
+  width: calc(100% - 56px); height: 100%; cursor: ns-resize;
+}
