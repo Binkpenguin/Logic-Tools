@@ -1,0 +1,154 @@
+/* base.css — reset, primitives, shared controls */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg-app);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--fs);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}  padding: 7px 10px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(var(--bg-chrome-2), var(--bg-chrome));
+  font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 10px;
+}
+#modal-head span { flex: 1; }
+#modal-body { padding: 14px; overflow: auto; line-height: 1.55; }
+#modal-body h4 { margin: 16px 0 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+#modal-body h4:first-child { margin-top: 0; }
+#modal-body p { margin: 0 0 8px; color: var(--text-dim); }
+#modal-body kbd {
+    font-family: var(--font-num); font-size: 10px;
+    background: var(--bg-sunken); border: 1px solid var(--line-soft);
+    border-radius: 3px; padding: 1px 5px;
+}
+.kv { display: grid; grid-template-columns: 150px 1fr; gap: 6px 12px; align-items: center; }
+.kv > label { color: var(--text-dim); }
+  padding: 7px 10px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(var(--bg-chrome-2), var(--bg-chrome));
+  font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 10px;
+}
+#modal-head span { flex: 1; }
+#modal-body { padding: 14px; overflow: auto; line-height: 1.55; }
+#modal-body h4 { margin: 16px 0 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+#modal-body h4:first-child { margin-top: 0; }
+#modal-body p { margin: 0 0 8px; color: var(--text-dim); }
+#modal-body kbd {
+    font-family: var(--font-num); font-size: 10px;
+    background: var(--bg-sunken); border: 1px solid var(--line-soft);
+    border-radius: 3px; padding: 1px 5px;
+}
+.kv { display: grid; grid-template-columns: 150px 1fr; gap: 6px 12px; align-items: center; }
+.kv > label { color: var(--text-dim); }
+
+/* ---------- toasts ---------- */
+#toast-stack {
+    position: fixed; right: 14px; bottom: 14px; z-index: 500;
+    display: flex; flex-direction: column; gap: 6px; pointer-events: none;
+}
+.toast {
+    background: var(--bg-chrome-2); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius); padding: 7px 12px; box-shadow: var(--shadow);
+    max-width: 340px; animation: toast-in .18s ease-out;
+}
+.toast.warn { border-left-color: var(--solo); }
+.toast.err  { border-left-color: var(--rec); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(6px); } }
+
+/* ---------- toasts ---------- */
+#toast-stack {
+    position: fixed; right: 14px; bottom: 14px; z-index: 500;
+    display: flex; flex-direction: column; gap: 6px; pointer-events: none;
+}
+.toast {
+    background: var(--bg-chrome-2); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius); padding: 7px 12px; box-shadow: var(--shadow);
+    max-width: 340px; animation: toast-in .18s ease-out;
+}
+.toast.warn { border-left-color: var(--solo); }
+.toast.err  { border-left-color: var(--rec); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(6px); } }
+
+
+body { display: flex; flex-direction: column; }
+
+button, input, select { font-family: inherit; font-size: inherit; color: inherit; }
+
+button {
+  background: linear-gradient(var(--bg-chrome-2), var(--bg-chrome));
+  border: 1px solid var(--line);
+  border-top-color: var(--edge-hi);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 3px 8px;
+  line-height: 1.4;
+}
+button:hover { color: var(--text); border-top-color: var(--accent); }
+button:active { background: var(--bg-sunken); }
+button.on, button.active { color: #08110d; background: var(--accent); border-color: var(--accent-2); }
+
+button.mini { padding: 2px 6px; font-size: 10px; }
+
+input[type="number"], input[type="text"], select {
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 2px 4px;
+  outline: none;
+}
+input:focus, select:focus { border-color: var(--accent); }
+
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; height: 14px; width: 100%;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px; background: var(--bg-sunken); border: 1px solid var(--line); border-radius: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 9px; height: 15px; margin-top: -7px;
+  background: linear-gradient(var(--bg-chrome-2), var(--bg-chrome));
+  border: 1px solid var(--line); border-radius: 2px;
+}
+input[type="range"]::-moz-range-track { height: 3px; background: var(--bg-sunken); border: 1px solid var(--line); }
+input[type="range"]::-moz-range-thumb {
+  width: 9px; height: 15px; border-radius: 2px;
+  background: var(--bg-chrome-2); border: 1px solid var(--line);
+}
+
+.spacer { flex: 1 1 auto; }
+.chip {
+  font-size: 10px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--text-faint); border: 1px solid var(--line-soft);
+  border-radius: 999px; padding: 1px 8px;
+}
+
+/* scrollbars */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--bg-sunken); }
+::-webkit-scrollbar-thumb { background: var(--bg-chrome-2); border: 1px solid var(--line); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--edge-hi); }
+
+/* ---------- modal ---------- */
+#modal-scrim {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(0,0,0,.55);
+  display: flex; align-items: center; justify-content: center;
+}
+#modal-scrim[hidden] { display: none; }
+#modal {
+  width: min(680px, 92vw); max-height: 84vh; display: flex; flex-direction: column;
+  background: var(--bg-panel); border: 1px solid var(--line);
+  border-top-color: var(--edge-hi); border-radius: 5px; box-shadow: var(--shadow);
+}
+#modal-head {
+  display: flex; align-items: center; gap: 8px;
